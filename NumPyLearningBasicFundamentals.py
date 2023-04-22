@@ -98,7 +98,21 @@ sys.getsizeof(a1) * len(a1)
 # here in numpy array getsizeof is not used because it returns the size of non elements items also. but we have to use in list because there is not other option.
 # getsizeof just shows the size of each element not the size of list. so we have to multiply each element's size with number of items to get the actual size of full list
 
+arr = np.eye(5, 5, k = 1, dtype = int) # This function creates a diagram of 1. of specified rows and columns and that K parameter takes the index from where to start default is 0
 
+'''Creating some random values in more precise manner in numpy.'''
+arr = np.random.rand(5, 5, 2) # This functions generates random numbers from 0 to 1.
+arr = np.random.randn(5, 5, 2) # this function generates number which are close to 0 it can be positive or negative as well
+arr = np.random.ranf((5, 5, 2)) # it takes a tuple as an arguement and size parameter. # this function created random values in an array which are nearer to 0 or even 0 but cannot be 1. only positive values are generated
+arr = np.random.randint(1, 100, 200) # it takes 3 arguements. first: min val, second: max val, third: total number of vals. this functions basically generates random intregal numbers between min and max.
+
+
+'''Creating datatypes in numpy'''
+arr = np.arange(11, dtype = np.float32) # using the dtype parameter
+arr = np.arange(11, dtype = "i") # using some codes of datatypes like f for float and i for integer. must be encoded in a string.
+newarr = np.float32(arr) # creating a new variable and assigning a new datatype to it
+anewarr = arr.astype(float) # creating a new variable and assigning a new datatype to it
+# newarr and anewarr both work same. the dfference is in newarr it goes by calling numpy and anewarr goes by calling the instance that is the array variable name
 
 
 
