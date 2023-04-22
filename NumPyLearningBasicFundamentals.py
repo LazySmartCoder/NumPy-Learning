@@ -98,7 +98,7 @@ sys.getsizeof(a1) * len(a1)
 # here in numpy array getsizeof is not used because it returns the size of non elements items also. but we have to use in list because there is not other option.
 # getsizeof just shows the size of each element not the size of list. so we have to multiply each element's size with number of items to get the actual size of full list
 
-arr = np.eye(5, 5, k = 1, dtype = int) # This function creates a diagram of 1. of specified rows and columns and that K parameter takes the index from where to start default is 0
+arr = np.eye(5, 5, k = 1, dtype = int) # This function creates a diagram of 1. of specified rows and columns and that K parameter takes the index from where to start default is 0. if the value if k is negative then it add 1 each time eg -2+1=-1+1=0+1=1. so from 1 it will start printing the values for more clarity visit - https://numpy.org/doc/stable/reference/generated/numpy.diag.html
 
 '''Creating some random values in more precise manner in numpy.'''
 arr = np.random.rand(5, 5, 2) # This functions generates random numbers from 0 to 1.
