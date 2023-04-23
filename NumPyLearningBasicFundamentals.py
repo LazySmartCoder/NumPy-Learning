@@ -107,15 +107,20 @@ arr = np.random.ranf((5, 5, 2)) # it takes a tuple as an arguement and size para
 arr = np.random.randint(1, 100, 200) # it takes 3 arguements. first: min val, second: max val, third: total number of vals. this functions basically generates random intregal numbers between min and max.
 
 
-'''Creating datatypes in numpy'''
+'''Converting datatypes in numpy'''
 arr = np.arange(11, dtype = np.float32) # using the dtype parameter
 arr = np.arange(11, dtype = "i") # using some codes of datatypes like f for float and i for integer. must be encoded in a string.
 newarr = np.float32(arr) # creating a new variable and assigning a new datatype to it
 anewarr = arr.astype(float) # creating a new variable and assigning a new datatype to it
 # newarr and anewarr both work same. the dfference is in newarr it goes by calling numpy and anewarr goes by calling the instance that is the array variable name
 
-
-
+# Some arthmetical functions in numpy
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+arr1 = np.array([[5, 3, 7], [3, 6, 1]])
+print(np.cumsum(arr1)) # this functions add the afterward values like if an array is 1, 2, 3 then the out will be 1, 3, 6.
+print(np.reciprocal(arr1)) # this function reciprocals the values.
+'''Above functions takes multiple arguement but works efficiently with one arguement'''
+'''cumsum is used for some statistical puposes liek mean.'''
 
 
 
