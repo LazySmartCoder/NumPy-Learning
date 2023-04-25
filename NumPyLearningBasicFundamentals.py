@@ -120,10 +120,85 @@ arr1 = np.array([[5, 3, 7], [3, 6, 1]])
 print(np.cumsum(arr1)) # this functions add the afterward values like if an array is 1, 2, 3 then the out will be 1, 3, 6.
 print(np.reciprocal(arr1)) # this function reciprocals the values.
 '''Above functions takes multiple arguement but works efficiently with one arguement'''
-'''cumsum is used for some statistical puposes liek mean.'''
+'''cumsum is used for some statistical puposes like mean.'''
 
 
+'''Broadcasting in numpy'''
+arr = np.array([[1, 2, 3]])
+arr1 = np.array([[[1, 2], [2, 5], [3, 9]]])
+print(arr1[0, 2, 0])
 
+
+'''Doing list slicing using 3 shape materials like (1, 2, 3). For more details watch https://youtu.be/-TYSM0CDA4c?t=9053'''
+arr1 = np.array([[[1, 2], [2, 5], [3, 9]]])
+print(arr1[0, 2, 0])
+
+
+'''Iterating numpy arrays in numpy'''
+arr = np.arange(1, 10).reshape(3, 3)
+for i in np.nditer(arr):
+  print(i) # or we can also use nested loops as python
+
+# Using the enumerate function of python
+arr = np.arange(1, 10).reshape(3, 3)
+for x, y in np.ndenumerate(arr):
+  print(x, y)
+
+# Using the ndenumerate function of numpy which gives us the indexing
+arr = np.arange(1, 10).reshape(3, 3)
+for x, y in enumerate(arr):
+  print(x, y)
+
+
+'''Copy vs View in numpy'''
+arr = np.array([1, 2, 6, 8, 8])
+v = arr.view()
+c = arr.copy()
+print(id(arr))
+print(id(v))
+print(id(c))
+'''When we use a new variable to assign to an array then the memory location is not effected but it is affected if we use view func. view function has some circumstances which allow to change the original array as well. think more deeply.'''
+
+'''Join split in numpy.'''
+arr1 = np.array([[1, 2, 34], [4, 5, 9]])
+arr2 = np.array([[3, 6, 54], [4, 8, 10]])
+print(np.concatenate((arr1, arr2), axis = 1))
+print(arr1)
+print(arr2)
+# asix1 = column and axis = 0 is row
+# column vertical and row horizontal
+
+# hstack: axis=0 and vstack: axis=1. these both functions works same as axis.
+# array = row, elements = column. by anirban bhattacharya
+arr1 = np.array([[1, 2, 34], [4, 5, 9]])
+arr2 = np.array([[3, 6, 54], [4, 8, 10]])
+print(np.dstack((arr1, arr2))) # this basically creates an array of indices which matches to indices of other array. it basically prints height wise.
+'''Splitting'''
+
+arr1 = np.array([[1, 2, 34], [4, 5, 9]])
+print(arr1)
+print(np.array_split(arr1, 3, axis=1))
+for i in np.array_split(arr1, 3, axis=1):
+  print(i)
+# this splits the array into two arrays. but be very careful while selecting the split numbers
+
+
+'''Searching in numpy array'''
+arr = np.array([0, 2, 9, 4, 6, 7, 10])
+print(np.where(arr!=2)) # this function works on a condition provided.
+print(sorted(arr))
+print(np.searchsorted(arr, [10, 101, 6], side = "right"))
+print(np.searchsorted(arr, [10, 101, 6], side = "left"))
+'''The above function do sorts an array and then tells us the indexes that where a particular number can be settled. it can do with right side or left side as well.'''
+
+
+arr = np.array([[[[0, 2], [9, 4], [6, 7]]]]) # this is a 4d array.
+print((arr[0, 0, 0, 1]==2)) # this array can be sorted in this manner or can even be checked.
+
+'''Sorting in numpy'''
+arr = np.array([[[[0, 2], [9, 4], [6, 7]]]])
+print(np.sort(arr)) # sorting an array in increasing order.
+print(np.sort(arr)[0, 0, ::-1]) # sorting in descedning order
 
 
 
