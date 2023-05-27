@@ -1,7 +1,7 @@
 '''
 THIS NUMPY LEARNING SCRIPT IS PURELY MADE BY ANIRBAN BHATTACHARYA AS NOTES.
-IT IS REQUESTED TO THE VIEWER NOT TO TRY READING ANY OF IT BECAUSE IT CAN ONLY BE
-UNDERSTOOD BY ANIRBAN BHATTACHARYA. THANK YOU.
+THESE NOTES ARE NOT FOR REFERENCE. THESE NOTES ARE NOT MADE FOR SELLING
+OR PUBLISHING. THESE ARE JUST REVESION NOTES!!
 
 AUTHOR: ANIRBAN BHATTACHARYA
 GITHUB USERNAME: @LazySmartCoder
@@ -103,8 +103,8 @@ arr = np.eye(5, 5, k = 1, dtype = int) # This function creates a diagram of 1. o
 '''Creating some random values in more precise manner in numpy.'''
 arr = np.random.rand(5, 5, 2) # This functions generates random numbers from 0 to 1.
 arr = np.random.randn(5, 5, 2) # this function generates number which are close to 0 it can be positive or negative as well
-arr = np.random.ranf((5, 5, 2)) # it takes a tuple as an arguement and size parameter. # this function created random values in an array which are nearer to 0 or even 0 but cannot be 1. only positive values are generated
-arr = np.random.randint(1, 100, 200) # it takes 3 arguements. first: min val, second: max val, third: total number of vals. this functions basically generates random intregal numbers between min and max.
+arr = np.random.ranf((5, 5, 2)) # it takes a tuple as an arguement as size parameter. # this function created random values in an array which are nearer to 0 or even 0 but cannot be 1. only positive values are generated
+arr = np.random.randint(1, 100, 200) # it takes 3 arguements. first: min val, second: max val, third: total number of vals. this functions basically generates random integral numbers between min and max.
 
 
 '''Converting datatypes in numpy'''
@@ -200,7 +200,43 @@ arr = np.array([[[[0, 2], [9, 4], [6, 7]]]])
 print(np.sort(arr)) # sorting an array in increasing order.
 print(np.sort(arr)[0, 0, ::-1]) # sorting in descedning order
 
+'''Filtering in numpy'''
+arr = np.array([2, 5, 7, 1, 9, 4])
+f = [True, False, True, True, False, False]
+x = arr[f]
+print(x)
 
+'''Some functions in numpy for ease'''
+# Shuffle function in numpy
+arr1 = np.array([2, 5, 7, 1, 9, 4])
+np.random.shuffle(arr1) # -
+'''Please note that this array changes the original array'''
+print(arr1)
+
+# Uniqe function in numpy
+arr = np.array([1, 5, 6, 6, 8, 9, 9, 5, 4, 9, 5])
+x = np.unique(arr, return_index = True) # this function removes the duplicates and if return index is True then it also tells us the index of the unqiue data.
+x = np.unique(arr, return_counts = True) # this function removes the duplicates and if return counts is True then it also tells us the counts of all data.
+print(x)
+
+# Resize function in numpy
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+x = np.resize(arr, (4, 2))
+print(x)
+
+# Flatten function in numpy
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8]).reshape(4, 2)
+f = arr.flatten()
+arr[1,0] = 5
+'''Flatten function makes a copy of the original array'''
+print(f)
+
+# Ravel function in numpy
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8]).reshape(4, 2)
+f = arr.ravel()
+arr[1,0] = 5
+'''Ravel function just views the original array not copy it'''
+print(f)
 
 
 
@@ -211,5 +247,3 @@ print(print(False) or print(True)) # when both are true and if used and operator
   here print statement will print once when and is used. and will print both prints when or used.
   please remember this concept.
 '''
-
-
