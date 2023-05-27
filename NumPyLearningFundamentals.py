@@ -238,7 +238,36 @@ arr[1,0] = 5
 '''Ravel function just views the original array not copy it'''
 print(f)
 
+# TolIst function in numpy
+arr = np.array([1, 2, 3, 4, 5])
+x = arr.tolist()
+print(x)
 
+
+'''Inserting and Deleting in numpy'''
+
+# Insert function
+arr = np.array([[1, 2, 5], [3, 4, 9]])
+x = np.insert(arr, [2, 3], [500, 600], axis = 1)
+# axis1 means vertically
+# axis0 means horizontally
+print(x)
+
+'''Inserting and Deleting in numpy'''
+
+# Append function
+arr = np.array([[1, 2, 5], [3, 4, 9], [3, 4, 5]])
+x = np.append(arr, [[5], [4], [7]], axis = 1)
+# axis1 means vertically
+# axis0 means horizontally
+# when we want append array according to the columns axis 0 then we have to do like above code.
+print(x)
+
+# Delete function in numpy
+arr = np.array([[1, 2, 5], [3, 4, 9], [3, 4, 5]])
+de = np.delete(arr, 2, axis = 1)
+print(de)
+'''In the last few functions of numpy the arrays got flattened means raveled (1d array)'''
 
 '''this is an out concept not of numpy'''
 print(print(False) or print(True)) # when both are true and if used and operator, then one one print statement will run and if or operator is used the both the print statements will print
